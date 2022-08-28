@@ -81,20 +81,18 @@
 
                 <form class="form-horizontal col-12">
                     <div class="formfields col-12">
-                        <table class="table col-12">
+                        <table class="table col-12" id="detailsTable">
                             <tr>
                                 <td colspan="2">
                                     <span>
                                         <label for="moviename" class="col-label">Name</label>
-                                        <input type="text" class="formfield col-4" id="moviename" placeholder=""
-                                            placeholder="Name">
+                                        <input type="text" class="formfield col-4" id="moviename" placeholder="Movie Name" onkeyup="upDateData(this.value,'name', 0)">
                                     </span>
                                 </td>
                                 <td colspan="2">
                                     <span>
                                         <label for="moviename" class="col-label">Language</label>
-                                        <input type="text" class="formfield col-4" id="moviename" placeholder=""
-                                            placeholder="Name">
+                                        <input type="text" class="formfield col-4" id="moviename"  placeholder="Language" onkeyup="upDateData(this.value,'language', 0)">
                                     </span>
                                 </td>
                             </tr>
@@ -102,15 +100,13 @@
                                 <td colspan="2">
                                     <span class="col-5">
                                         <label for="moviename" class="col-label">Cast</label>
-                                        <input type="text" class="formfield col-4" id="moviename" placeholder=""
-                                            placeholder="Name">
+                                        <input type="text" class="formfield col-4" id="moviename" placeholder="Cast" onkeyup="upDateData(this.value,'cast', 0)">
                                     </span>
                                 </td>
                                 <td colspan="2">
                                     <span class="col-5">
                                         <label for="moviename" class="col-label">Genre</label>
-                                        <input type="text" class="formfield col-4" id="moviename" placeholder=""
-                                            placeholder="Name">
+                                        <input type="text" class="formfield col-4" id="moviename" onkeyup="upDateData(this.value,'genre', 0)"  placeholder="Genre">
                                     </span>
                                 </td>
                             </tr>
@@ -121,7 +117,8 @@
                                     </b>
                                     <br>
                                     <span class="col-5">
-                                        <button type="button" id="add-new-location" class="btn btn-primary">
+                                        <button type="button" id="add-new-location" class="btn btn-primary"
+                                            onclick="addingLocations()">
                                             + Add Location
                                         </button>
                                     </span>
@@ -146,7 +143,7 @@
                                     Timings
                                 </td>
                             </tr>
-                            <tr class="dynamicrow">
+                            <!-- <tr class="dynamicrow">
                                 <td>
                                     <input type="text" class="formfield col-12" id="location" placeholder="Name">
                                 </td>
@@ -162,22 +159,17 @@
 
                                         </span>
 
-                                        <select name="timer" id="hour" onchange="addTimings(this.value)"></select>
+                                        <select name="timer" id="hour" onchange="addTimings(this.value)" onload="createElementDynamicHour()" ></select>
                                     </div>
 
                                 </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <button class="btn btn-outline-success btn-md" id="createmovie">
-                                        Submit
-                                    </button>
-                                </td>
-                            </tr>
+                            </tr> -->
+
                         </table>
 
-
+                        <button class="btn btn-outline-success btn-md" id="createmovie">
+                            Submit
+                        </button>
                         <br>
 
 
