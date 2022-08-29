@@ -101,7 +101,10 @@ function addingLocations() {
     '" onchange="addTimings(this.value,' +
     rdaid +
     ')" class="hour"></select></div>';
-
+newCell1.classList.add('col-3');
+newCell2.classList.add('col-3');
+newCell3.classList.add('col-2');
+newCell4.classList.add('col-4');
   // var newText1 = document.createTe('<input type="text" class="formfield col-12" id="location" placeholder="Name">');
   // var newText2 = document.createTextNode
 
