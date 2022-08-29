@@ -166,6 +166,7 @@ body {
 .datatable {
   box-shadow: 0px 0px 3px 1px rgb(199, 199, 199);
   width: 80vw;
+  
   margin-left: 50px;
   margin-top: 20px;
   align-self: center;
@@ -173,13 +174,16 @@ body {
   align-items: center;
 }
 thead {
-  background-color: #d1d1d1;
+  background-color: #5d5d5f;
+  color: white;
+  
 }
 th {
   width: 16.5%;
 }
 #datatable {
   width: 80vw;
+
 }
 
 /* Back button */
@@ -241,6 +245,8 @@ th {
 .add-movie {
   margin-left: 50px;
   width: 250px;
+  border: #dc3558;
+  background-color: #dc3558;
 }
 
 /* Form Holder */
