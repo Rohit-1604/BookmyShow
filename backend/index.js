@@ -14,7 +14,7 @@ connect();
 async function connect() {
   await client.connect();
 }
-app.use("/", function(req, res) {
+app.get("/", function(req, res) {
   res.json({
     status: "OK",
   })
