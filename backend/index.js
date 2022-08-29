@@ -10,9 +10,16 @@ const { Client } = require("pg");
 const client = new Client(process.env.DATABASE_URLM);
 app.use(bodyParser.json());
 // console.log(client);
+
 connect();
 async function connect() {
-  await client.connect();
+  try {
+        await client.connect();
+    } catch (e) {
+        console.log(e);
+    }
+
+  // await client.connect();
 }
 app.get("/", function(req, res,next) {
   res.status(200).json({
