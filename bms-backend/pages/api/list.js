@@ -4,16 +4,7 @@ const bodyParser = require("body-parser");
 const { Client } = require("pg");
 const client = new Client(process.env.DATABASE_URLM);
 
-connect();
-async function connect() {
-  try {
-        await client.connect();
-    } catch (e) {
-        console.log(e);
-    }
 
-  // await client.connect();
-}
 
 export default async function (req, res) {
     await client.connect();
