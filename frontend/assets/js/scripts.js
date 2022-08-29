@@ -175,6 +175,7 @@ async function createNewMovie() {
       console.log(data);
       if(data.status == "success"){
         alert("A new Movie has been created successfully.");
+        window.location.href = "/index.html";
       }
     });
 }
