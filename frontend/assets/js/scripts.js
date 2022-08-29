@@ -105,7 +105,9 @@ async function locationDetails() {
                 }" aria-expanded="false" aria-controls="collapse_${
             list_details[i]
           }">
+          <h3>
                 ${show_details_array[list_details[i]]["cityname"]}
+                </h3>
             </button>
         </h2>
         <div id="collapse_${
@@ -121,9 +123,7 @@ async function locationDetails() {
                             show_details_array[list_details[i]]["theatername"]
                           } </b>
                         <br>
-                        <address>
-                            <i>Shipra Mall, Noida</i>
-                        </address>
+                  
                     </div>
                     <div class="col-2">
                         ₹ ${
@@ -173,5 +173,8 @@ async function createNewMovie() {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+      if(data.status == "success"){
+        alert("A new Movie has been created successfully.");
+      }
     });
 }
