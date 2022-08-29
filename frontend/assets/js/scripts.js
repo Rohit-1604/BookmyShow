@@ -207,7 +207,7 @@ async function editMovie(field, value){
 }
 
 console.log(JSON.stringify(values))
-  let uri = `http://localhost:3000/api/update?movieid=${movieid}&field=${field}&value=${values}`;
+  let uri = `https://bms-backend.vercel.app/api/update?movieid=${movieid}&field=${field}&value=${values}`;
   document.getElementById("edit").classList.add('d-none');
   document.getElementById("loader").classList.remove('d-none');
  
