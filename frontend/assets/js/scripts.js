@@ -196,7 +196,7 @@ async function loadMovieDetails(){
   let movieid = url.search.split("?")[1].split("=")[1];
   let uri = `https://bms-backend.vercel.app/api/details?movieid=${movieid}`;
   await fetch(uri, function (err, response) {
-    console.log(JSON.stringify(response.status));
+    console.log(JSON.stringify(response));
     if (err) {
       console.log(err);
     }
