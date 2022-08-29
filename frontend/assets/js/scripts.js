@@ -186,3 +186,40 @@ async function createNewMovie() {
       }
     });
 }
+
+// function to edit the movie
+async function editMovie(){}
+
+// function to load movie details
+async function loadMovieDetails(){
+  var url = new URL(window.location);
+  let movieid = url.search.split("?")[1].split("=")[1];
+  let uri = `https://bms-backend.vercel.app/api/details?movieid=${movieid}`;
+  await fetch(uri, function (err, response) {
+    console.log(JSON.stringify(response.status));
+    if (err) {
+      console.log(err);
+    }
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      let list = data.data[0];
+      let name = list.movie_name;
+      let languages = list.languages;
+
+      document.getElementById("moviename").value = name;
+
+      let show_details = JSON.stringify(list.show_details);
+      show_details = show_details.slice(0, show_details.length - 1);
+      show_details = show_details.slice(1);
+      show_details = show_details.replaceAll("\\", "");
+      show_details = show_details.trim();
+      let show_details_array = [show_details];
+      show_details_array = JSON.parse(show_details_array);
+      console.log(show_details);
+      console.log(Object.keys(show_details_array).length);
+      let list_details = Object.keys(show_details_array);
+    
+})
+}
+
