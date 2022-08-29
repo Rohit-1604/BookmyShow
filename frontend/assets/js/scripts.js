@@ -147,6 +147,10 @@ async function createNewMovie() {
   console.log("Creating new movie...");
   console.log("================================");
   console.log(JSON.stringify(movieDetails.locations));
+  document.getElementById("createmovie").classList.add("d-none");
+  document.getElementById("loader").classList.remove("d-none");
+  
+
   //   let uri = `https://bms-backend.vercel.app/api/add?name=${movieDetails.name}&cast=${movieDetails.cast}&languages=${movieDetails.languages}&genre=${movieDetails.genre}&locations=${movieDetails.locations}`;
   let uri = `https://bms-backend.vercel.app/api/add`;
   console.log("url: " + uri);
@@ -176,6 +180,8 @@ async function createNewMovie() {
       if(data.status == "success"){
         alert("A new Movie has been created successfully.");
         window.location.href = "/index.html";
+        document.getElementById("loader").classList.add("d-none");
+        document.getElementById("success").classList.remove("d-none");
       }
     });
 }
