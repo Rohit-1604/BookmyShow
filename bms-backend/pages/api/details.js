@@ -7,7 +7,11 @@ const client = new Client(process.env.DATABASE_URLM);
 
 
 export default async function (req, res) {
+  try{
     await client.connect();
+  } catch (err) {
+    console.log(err);
+  }
 
     let movieid = req.query.movieid;
     result = {};
