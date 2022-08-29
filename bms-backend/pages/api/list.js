@@ -27,12 +27,17 @@ export default async function (req, res) {
       let query = `SELECT * FROM movies`;
       result = await client.query(query);
       console.log(result);
+      res.send({
+        status: "success",
+        data: result.rows,
+      })
     } catch (err) {
       console.error("error executing query: ", err);
+      res.send({
+        status: "error",
+        data: err,
+      })
     }
   
-    res.send({
-      status: "success",
-      data: result.rows,
-    })
+   
 }

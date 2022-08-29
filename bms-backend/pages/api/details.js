@@ -21,7 +21,7 @@ export default async function (req, res) {
   }
 
     let movieid = req.query.movieid;
-    result = {};
+   let  result = {};
     try {
       let query = `SELECT * FROM movies WHERE id=${movieid}`;
       result = await client.query(query);

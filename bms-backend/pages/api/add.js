@@ -28,6 +28,7 @@ export default async function (req, res) {
   let cast_team = JSON.stringify(req.body.cast);
   let genre = JSON.stringify(req.body.genre);
   let show_details = JSON.stringify(req.body.locations);
+  let result = {}
   try {
     let query = `INSERT INTO movies (raid,movie_name,languages,cast_team,genre,show_details) VALUES ('${raid}','${name}','${language}','${cast_team}','${genre}','${show_details}')`;
     const result = await client.query(query);
