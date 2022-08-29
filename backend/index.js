@@ -14,7 +14,11 @@ connect();
 async function connect() {
   await client.connect();
 }
-
+app.use("/", function(req, res) {
+  res.json({
+    status: "OK",
+  })
+})
 // Add a new movie
 app.post("/add", cors(), async function (req, res) {
   console.log(req.body);
