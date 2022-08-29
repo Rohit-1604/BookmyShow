@@ -178,10 +178,11 @@ async function createNewMovie() {
     .then((data) => {
       console.log(data);
       if(data.status == "success"){
-        alert("A new Movie has been created successfully.");
-        window.location.href = "/index.html";
         document.getElementById("loader").classList.add("d-none");
         document.getElementById("success").classList.remove("d-none");
+        alert("A new Movie has been created successfully.");
+        window.location.href = "/index.html";
+        
       }
     });
 }
