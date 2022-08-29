@@ -51,7 +51,8 @@ async function loadTableData() {
         newRow.insertCell().innerHTML = castTeam;
         newRow.insertCell().innerHTML = languages;
         newRow.insertCell().innerHTML = genreList;
-        newRow.insertCell().innerHTML = numberofLocations;
+        let newCellLocations = newRow.insertCell()
+        newCellLocations.innerHTML = `<label class="rounded-circle btn btn-outline-danger">${numberofLocations}</label>`;
         newRow.insertCell().innerHTML = `<td><a href="view-details.html?movieid=${list[i].id}"><button class="btn btn-primary m-2" id="select">View Details</button></a><a href="edit-movie.html?movieid=${list[i].id}"><button class="btn btn-success m-2" id="select">Edit Details</button>
         </a>
     </td>`;
@@ -188,7 +189,49 @@ async function createNewMovie() {
 }
 
 // function to edit the movie
-async function editMovie(){}
+async function editMovie(field, value){
+  var url = new URL(window.location);
+  let movieid = url.search.split("?")[1].split("=")[1];
+  console.log(value);
+  let values = []
+  if(field == "languages" || field == "genre" || field == "cast_team"){
+    let temp = value.split(",")
+    
+  for(var i = 0; i < temp.length; i++) {
+    console.log(temp[i])
+    values.push(temp[i]);
+  }
+  values = JSON.stringify(values)
+}else{
+    values = value
+}
+
+console.log(JSON.stringify(values))
+  let uri = `http://localhost:3000/api/update?movieid=${movieid}&field=${field}&value=${values}`;
+  document.getElementById("edit").classList.add('d-none');
+  document.getElementById("loader").classList.remove('d-none');
+ 
+  await fetch(uri, function (err, response) {
+    console.log(response);
+    if (err) {
+      console.log(err);
+    }
+  })
+    .then((response) => response.json())
+    .then(async (data) => {
+      console.log(data);
+
+      if(data.status == "success"){
+        document.getElementById("loader").classList.add("d-none");
+        document.getElementById("success").classList.remove("d-none");
+        await new Promise(r => setTimeout(r, 2000));
+        document.getElementById("success").classList.add("d-none");
+        document.getElementById("edit").classList.remove("d-none");
+
+
+      }
+    })
+}
 
 // function to load movie details
 async function loadMovieDetails(){
@@ -207,8 +250,14 @@ async function loadMovieDetails(){
       let list = data.data[0];
       let name = list.movie_name;
       let languages = list.languages;
+      let cast = list.cast_team
+      let genre = list.genre
+
 
       document.getElementById("moviename").value = name;
+      document.getElementById("language").value = languages;
+      document.getElementById("cast").value = cast;
+      document.getElementById("genre").value = genre;
 
       let show_details = JSON.stringify(list.show_details);
       show_details = show_details.slice(0, show_details.length - 1);

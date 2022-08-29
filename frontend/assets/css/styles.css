@@ -165,8 +165,7 @@ body {
 
 .datatable {
   box-shadow: 0px 0px 3px 1px rgb(199, 199, 199);
-  width: 80vw;
-  
+  width: 80vw;  
   margin-left: 50px;
   margin-top: 20px;
   align-self: center;
@@ -176,6 +175,9 @@ body {
 thead {
   background-color: #5d5d5f;
   color: white;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 10px;
+  letter-spacing: 30;
   
 }
 th {
@@ -245,7 +247,13 @@ th {
 .add-movie {
   margin-left: 50px;
   width: 250px;
-  border: #dc3558;
+  /* border: #dc3558;
+  background-color: #dc3558; */
+  border: rgb(69, 82, 102);
+  background-color: rgb(69, 82, 102);
+}
+.add-movie:hover {
+   border: #dc3558;
   background-color: #dc3558;
 }
 

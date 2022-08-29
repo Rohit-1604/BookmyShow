@@ -88,13 +88,13 @@
                                 <td colspan="2">
                                     <span>
                                         <label for="moviename" class="col-label col-2">Name</label>
-                                        <input type="text" class="formfield col-8" id="moviename" placeholder="Movie Name" onkeyup="upDateData(this.value,'name', 0)">
+                                        <input type="text" class="formfield col-8" id="moviename" placeholder="Movie Name" onkeyup="editMovie('movie_name',this.value)">
                                     </span>
                                 </td>
                                 <td colspan="2">
                                     <span>
                                         <label for="moviename" class="col-label col-2">Language</label>
-                                        <input type="text" class="formfield col-8" id="moviename"  placeholder="Language" onkeyup="upDateData(this.value,'language', 0)">
+                                        <input type="text" class="formfield col-8" id="language"  placeholder="Language" onkeyup="editMovie('languages',this.value)">
                                     </span>
                                 </td>
                             </tr>
@@ -102,17 +102,17 @@
                                 <td colspan="2">
                                     <span class="col-5">
                                         <label for="moviename" class="col-label col-2">Cast</label>
-                                        <input type="text" class="formfield col-8" id="moviename" placeholder="Cast" onkeyup="upDateData(this.value,'cast', 0)">
+                                        <input type="text" class="formfield col-8" id="cast" placeholder="Cast" onkeyup="editMovie('cast_team',this.value)">
                                     </span>
                                 </td>
                                 <td colspan="2">
                                     <span class="col-5">
                                         <label for="moviename" class="col-label col-2">Genre</label>
-                                        <input type="text" class="formfield col-8" id="moviename" onkeyup="upDateData(this.value,'genre', 0)"  placeholder="Genre">
+                                        <input type="text" class="formfield col-8" id="genre" onkeyup="editMovie('genre',this.value)"  placeholder="Genre">
                                     </span>
                                 </td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td colspan="4">
                                     <p class="h2" id="pageHeader" style="height: 10px; margin-top: 10px; padding-bottom: 10px;">
                                         Add Locations
@@ -144,7 +144,7 @@
                                 <td>
                                     Timings
                                 </td>
-                            </tr>
+                            </tr> -->
                             <!-- <tr class="dynamicrow">
                                 <td>
                                     <input type="text" class="formfield col-12" id="location" placeholder="Name">
@@ -169,7 +169,7 @@
 
                         </table>
 
-                        <button type="button" class="btn btn-outline-success btn-md" id="createmovie" onclick="createNewMovie()">
+                        <button type="button" class="btn btn-outline-success btn-md" id="edit" disabled="true">
                             Submit
                         </button>
                         <img src="https://animated-gif-creator.com/images/03/download-loading-gif-generator-transparent-background_5.gif" id="loader" class="d-none" style="height: 40px;">
@@ -190,7 +190,9 @@
 
 </body>
 <script>
+    window.onload = function() {
     loadMovieDetails();
+    }
 </script>
 
 </html>
