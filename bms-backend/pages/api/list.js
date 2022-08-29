@@ -16,6 +16,8 @@ async function connect() {
 }
 
 export default async function (req, res) {
+    await client.connect();
+
     let result = {};
     try {
       let query = `SELECT * FROM movies`;
