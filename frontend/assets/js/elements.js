@@ -9,7 +9,7 @@ var movieDetails = {
   cast: [],
   languages: [],
   genre: [],
-  locations: [],
+  locations: {},
 };
 
 // Algorithm for creating and adding times
