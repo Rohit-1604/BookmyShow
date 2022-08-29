@@ -11,7 +11,7 @@ export default async function (req, res) {
   await NextCors(req, res, {
     // Options
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
-    origin: ['*','https://bookmy-show-frontend.vercel.app',"http://localhost:5500"],
+    origin: ['*','https://bookmy-show-frontend.vercel.app','http://localhost:5501','http://127.0.0.1:5501'],
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
  });
   try{
