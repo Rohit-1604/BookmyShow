@@ -1,7 +1,7 @@
 // Function Update Table
 async function loadTableData() {
   // uri
-  let uri = "http://localhost:3000/list";
+  let uri = "https://bookmy-show-backend.vercel.app/list";
   await fetch(uri, function (err, response) {
     console.log(JSON.stringify(response));
     if (err) {
@@ -64,7 +64,7 @@ async function loadTableData() {
 async function locationDetails() {
   var url = new URL(window.location);
   let movieid = url.search.split("?")[1].split("=")[1];
-  let uri = `http://localhost:3000/details?movieid=${movieid}`;
+  let uri = `https://bookmy-show-backend.vercel.app/details?movieid=${movieid}`;
   await fetch(uri, function (err, response) {
     console.log(JSON.stringify(response.status));
     if (err) {
@@ -147,8 +147,8 @@ async function createNewMovie() {
   console.log("Creating new movie...");
   console.log("================================");
   console.log(JSON.stringify(movieDetails.locations));
-  //   let uri = `http://localhost:3000/add?name=${movieDetails.name}&cast=${movieDetails.cast}&languages=${movieDetails.languages}&genre=${movieDetails.genre}&locations=${movieDetails.locations}`;
-  let uri = `http://localhost:3000/add`;
+  //   let uri = `https://bookmy-show-backend.vercel.app/add?name=${movieDetails.name}&cast=${movieDetails.cast}&languages=${movieDetails.languages}&genre=${movieDetails.genre}&locations=${movieDetails.locations}`;
+  let uri = `https://bookmy-show-backend.vercel.app/add`;
   console.log("url: " + uri);
   await fetch(
     uri,
