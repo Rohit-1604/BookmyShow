@@ -102,6 +102,6 @@ app.use(
     methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
   })
 );
-app.listen(3000);
-module.exports = app;
+app.listen(process.env.PORT || 3000);
+module.exports = app ;
 console.log("server started");
